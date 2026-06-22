@@ -6,8 +6,8 @@ import (
 	"errors"
 )
 type book struct{
-	ID string
-	Title string
-	Author string
-	Quantity int
+	ID string `json:"id"`
+	Title string `json:"title"`
+	Author string `json:"author"`
+	Quantity int `json:"quantity"`
 }
