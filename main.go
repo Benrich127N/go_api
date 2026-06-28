@@ -11,7 +11,7 @@ type server struct {
 
 func (s *server) ServeHTTP(w http.ResponseWriter,r  *http.Request,)  {
 	switch r.Method {
-		case "GET":
+		case http.MethodGet:
 			switch r.URL.Path {
 			case "/":
 				w.Write([]byte("index page"))
@@ -20,6 +20,10 @@ func (s *server) ServeHTTP(w http.ResponseWriter,r  *http.Request,)  {
 				w.Write([]byte("users page"))
 				return
 			}
+
+		default:
+			w.Write([]byte("404 page not found"))
+			return
 	}
 }
 
