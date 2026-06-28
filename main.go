@@ -12,7 +12,14 @@ type server struct {
 func (s *server) ServeHTTP(w http.ResponseWriter,r  *http.Request,)  {
 	switch r.Method {
 		case "GET":
-			w.Write([]byte("index page"))
+			switch r.URL.Path {
+			case "/":
+				w.Write([]byte("index page"))
+			 return
+			case "/users":
+				w.Write([]byte("users page"))
+				return
+			}
 	}
 }
 
