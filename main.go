@@ -10,7 +10,10 @@ type server struct {
 }
 
 func (s *server) ServeHTTP(w http.ResponseWriter,r  *http.Request,)  {
-	w.Write([]byte("Hello from the server"))
+	switch r.Method {
+		case "GET":
+			w.Write([]byte("index page"))
+	}
 }
 
 func main() {
