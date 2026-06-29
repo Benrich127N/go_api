@@ -19,6 +19,9 @@ func (s *server) ServeHTTP(w http.ResponseWriter,r  *http.Request,)  {
 			case "/users":
 				w.Write([]byte("users page"))
 				return
+			case "/books":
+				w.Write([]byte("books page"))
+				return
 			}
 
 		default:
